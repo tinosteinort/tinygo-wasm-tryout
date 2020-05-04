@@ -28,10 +28,5 @@ When open the URL `http://localhost:8080`, there should be something in the brow
 
 ### Notes
 
-For `go` the `wasm_exec.js` from `$(go env GOROOT)/misc/wasm/wasm_exec.js` is used:
-```
-cp "$(go env GOROOT)/misc/wasm/wasm_exec.js" web/go
-```
-
-For `tinygo` the `wasm_exec.js` from the tinygo repository is used:
-https://github.com/tinygo-org/tinygo/blob/master/targets/wasm_exec.js
+The matching `wasm_exec.js` can be used from the `tinygo` docker image. Run `load-wasm_exec.sh`
+to get a fresh copy.
