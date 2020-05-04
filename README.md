@@ -3,9 +3,11 @@
 
 ## Compile code to WASM 
 
-`go-lang` needs to be installed. `tinygo` is used via docker.
+Requirements:
+ * `go-lang`
+ * docker (used for `tinygo`)
 
-Compile `go` and `tinygo`code to wasm:
+Create `wasm` artifacts:
 ```
 go generate ./...
 ```
@@ -16,17 +18,11 @@ This needs to be executed every time when the `go-wasm/main.go` file has changed
 
 ## Run server
 
-Run with `go wasm` artifact:
 ```
-go run main.go "go"
-```
-
-Run with `tinygo wasm` artifact:
-```
-go run main.go "tinygo"
+go run main.go
 ```
 
-When open the URL, there should be something in the browser console.
+When open the URL `http://localhost:8080`, there should be something in the browser console.
 
 
 
@@ -34,7 +30,7 @@ When open the URL, there should be something in the browser console.
 
 For `go` the `wasm_exec.js` from `$(go env GOROOT)/misc/wasm/wasm_exec.js` is used:
 ```
-cp "$(go env GOROOT)/misc/wasm/wasm_exec.js" web/
+cp "$(go env GOROOT)/misc/wasm/wasm_exec.js" web/go
 ```
 
 For `tinygo` the `wasm_exec.js` from the tinygo repository is used:

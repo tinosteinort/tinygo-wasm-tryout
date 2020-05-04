@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tinygo-wasm-example</title>
+</head>
+<body>
+
+    <script src="wasm_exec.js"></script>
+    <script src="wasm_bootstrap.js"></script>
+    <script>
+        function doSomething() {
+            input = document.getElementById("input")
+            text = input.value
+            console.log("text from js:", text)
+            wasm.exports.printSomething(text);
+        }
+    </script>
+
+    <input id="input" type="text"/>
+    <input type="button" value="OK" onclick="doSomething()">
+    <br/>
+    <label id="output"></label>
+</body>
+</html>
