@@ -27,6 +27,6 @@ When open the URL `http://localhost:8080`, there should be something in the brow
 
 
 ### Notes
-
-The matching `wasm_exec.js` can be used from the `tinygo` docker image. Run `load-wasm_exec.sh`
-to get a fresh copy.
+ 
+While `build-tinygo-wasm.sh` is executed while `go generate ./...` the matching `load-wasm_exec.sh`
+is copied to `web` directory.

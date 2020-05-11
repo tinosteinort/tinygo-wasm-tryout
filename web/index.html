@@ -10,10 +10,7 @@
     <script src="wasm_bootstrap.js"></script>
     <script>
         function doSomething() {
-            input = document.getElementById("input")
-            text = input.value
-            console.log("text from js:", text)
-            wasm.exports.printSomething(text);
+            wasm.exports.update();
         }
     </script>
 
