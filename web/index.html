@@ -10,7 +10,8 @@
     <script src="wasm_bootstrap.js"></script>
     <script>
         function doSomething() {
-            wasm.exports.update();
+            let value = document.getElementById("input").value;
+            update(value)
         }
     </script>
 

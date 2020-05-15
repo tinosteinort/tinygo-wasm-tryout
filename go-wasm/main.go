@@ -11,21 +11,28 @@ func main() {
 	document := js.Global().Get("document")
 	output := document.Call("getElementById", "output")
 	output.Set("innerHTML", "set by go from main function")
+
+	registerCallbacks()
+
+	select {}
 }
 
-//go:export update
-func update() {
-	value := inputValue()
+func registerCallbacks() {
+	js.Global().Set("update", js.FuncOf(jsUpdate))
+}
+
+func jsUpdate(this js.Value, value []js.Value) interface{} {
+	s := value[0].String()
+	update(s)
+	return nil
+}
+
+func update(value string) {
 	setOutputValue(modify(value))
 }
 
 func modify(value string) string {
 	return strings.ToUpper(value)
-}
-
-func inputValue() string {
-	document := js.Global().Get("document")
-	return document.Call("getElementById", "input").Get("value").String()
 }
 
 func setOutputValue(value string) {

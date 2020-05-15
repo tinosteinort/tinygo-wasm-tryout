@@ -6,6 +6,7 @@ import (
 	"net/http"
 )
 
+//-go:generate ./build-go-wasm.sh
 //go:generate ./build-tinygo-wasm.sh
 func main() {
 

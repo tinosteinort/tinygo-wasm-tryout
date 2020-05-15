@@ -1,4 +1,4 @@
-# GO / WASM tryout
+# tinygo / go - WASM tryout
 
 
 ## Compile code to WASM 
@@ -27,6 +27,11 @@ When open the URL `http://localhost:8080`, there should be something in the brow
 
 
 ### Notes
- 
-While `build-tinygo-wasm.sh` is executed while `go generate ./...` the matching `load-wasm_exec.sh`
-is copied to `web` directory.
+
+While `build-(tiny)go-wasm.sh` is executed while `go generate ./...` the matching `load-wasm_exec.sh`
+is copied to `web` directory. There are differences in the file for `go` / `tinygo`.
+
+#### Switch between `go` and `tinygo`
+
+Activate the favoured `go generate` line in `main.go`
+
